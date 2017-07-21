@@ -6,7 +6,7 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 import moment from 'moment-timezone';
-moment.tz.setDefault("UTC");
+//moment.tz.setDefault("UTC");
 Object.defineProperty(Vue.prototype, '$moment', { get() { return this.$root.moment }});
 
 import { checkFilter, setDay } from './util/bus';
@@ -20,6 +20,9 @@ import routes from './util/routes'
 const router = new VueRouter({
     routes: routes
 });
+
+import Tooltip from './util/tooltip';
+Vue.use(Tooltip);
 
 new Vue({
     el: '#app',
